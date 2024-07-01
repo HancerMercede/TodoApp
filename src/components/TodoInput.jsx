@@ -3,6 +3,11 @@ import { useState } from "react";
 export const TodoInput = (props) => {
   const { handleTodos, todoValue, setTodoValue } = props;
 
+  const handleInput = () => {
+    if (todoValue === "" || todoValue === "Enter todo...") return;
+    handleTodos(todoValue);
+  };
+
   return (
     <header>
       <input
@@ -13,7 +18,7 @@ export const TodoInput = (props) => {
       />
       <button
         onClick={() => {
-          handleTodos(todoValue);
+          handleInput();
           setTodoValue("");
         }}
       >
