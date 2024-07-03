@@ -1,4 +1,5 @@
 import { TodoCard } from "./TodoCard";
+import PropTypes, { string } from "prop-types";
 
 export const TodoList = (props) => {
   const { todos } = props;
@@ -11,4 +12,8 @@ export const TodoList = (props) => {
       ))}
     </ul>
   );
+};
+
+TodoList.propTypes = {
+  todos: PropTypes.arrayOf(string).isRequired,
 };

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 export const TodoCard = (props) => {
   const { children, handleDeleteTodo, handleEditTodo, index } = props;
@@ -31,4 +32,11 @@ export const TodoCard = (props) => {
       </div>
     </li>
   );
+};
+
+TodoCard.propTypes = {
+  children: PropTypes.element,
+  handleDeleteTodo: PropTypes.func,
+  handleEditTodo: PropTypes.func,
+  index: PropTypes.number,
 };

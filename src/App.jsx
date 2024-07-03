@@ -1,5 +1,4 @@
 import "./App.css";
-
 import { TodoInput } from "./components/TodoInput";
 import { TodoList } from "./components/TodoList";
 import { useState, useEffect } from "react";
@@ -30,14 +29,17 @@ function App() {
     const newTodoList = todos.filter((todo, Todoindex) => {
       return Todoindex != index;
     });
+
     setTodos(newTodoList);
     localStorage.setItem("todolist", JSON.stringify(newTodoList));
   };
+
   const handleEditTodo = (index) => {
     const valueToBeEdited = todos[index];
     setTodoValue(valueToBeEdited);
     handleDeleteTodo(index);
   };
+
   return (
     <>
       <TodoInput
