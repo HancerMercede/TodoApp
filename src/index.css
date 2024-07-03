@@ -76,12 +76,12 @@ p {
 
 .todoItem {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 14px;
   padding: 14px;
   border-radius: 14px;
   background: white;
-
 }
 
 .todoItem p {
@@ -90,6 +90,7 @@ p {
 
 .actionsContainer {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 14px;
 }
