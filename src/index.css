@@ -82,7 +82,9 @@ p {
   padding: 14px;
   border-radius: 14px;
   background: white;
+
 }
+
 
 .todoItem p {
   flex: 1;
