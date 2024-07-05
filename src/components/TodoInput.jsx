@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import { useRef } from "react";
+
 export const TodoInput = (props) => {
   const { handleTodos, todoValue, setTodoValue } = props;
 
@@ -6,6 +9,14 @@ export const TodoInput = (props) => {
     handleTodos(todoValue);
   };
 
+  const InputElement = useRef(null);
+
+  useEffect(() => {
+    if (InputElement.current) {
+      InputElement.current.focus();
+    }
+  }, [handleTodos]);
+
   return (
     <header>
       <input
@@ -13,6 +24,7 @@ export const TodoInput = (props) => {
         onChange={(e) => setTodoValue(e.target.value)}
         type="text"
         placeholder="Enter todo..."
+        ref={InputElement}
       />
       <button
         onClick={() => {
