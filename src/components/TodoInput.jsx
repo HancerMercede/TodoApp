@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 
 export const TodoInput = (props) => {
   const { handleTodos, todoValue, setTodoValue } = props;
@@ -32,7 +31,7 @@ export const TodoInput = (props) => {
           setTodoValue("");
         }}
       >
-        Add
+        Add Item
       </button>
     </header>
   );

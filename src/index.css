@@ -4,8 +4,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #202124;
+  /* color: #202124; */
+
 }
+
 
 h1,
 h2,
@@ -15,12 +17,15 @@ button {
   font-family: 'Press Start 2P', system-ui;
 }
 
+
 #root {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   padding: 14px;
-  background: linear-gradient(to bottom, #3498DB, #eff6ff);
+  background-image: url('/src/assets/images/StarWar.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
   gap: 14px;
 }
 
@@ -42,6 +47,7 @@ header input {
   border-radius: 14px;
   outline: none;
   width: 100%;
+
 }
 
 header button {
@@ -60,7 +66,7 @@ header input {
   padding: 14px 18px;
   border: none;
   outline: none;
-  background: white;
+  background: whitesmoke;
 }
 
 p {
@@ -81,8 +87,7 @@ p {
   gap: 14px;
   padding: 14px;
   border-radius: 14px;
-  background: white;
-
+  background: whitesmoke;
 }
 
 
@@ -110,9 +115,20 @@ p {
 
 .completed {
   text-decoration: line-through;
-  color: red
+  color: red;
+  font-style: oblique;
 }
 
+.card {
+  transition: .3s ease-in-out;
+
+  cursor: pointer;
+}
+
+.card:hover {
+  background: linear-gradient(to right, rgb(217, 132, 28) 20%, rgb(238, 228, 228) 58%, rgb(17, 120, 100) 80%);
+  color: white;
+}
 
 @media (min-width: 640px) {
 

@@ -10,7 +10,7 @@ export const TodoCard = (props) => {
     <li
       className={`${
         complete ? "completed" : ""
-      } todoItem animate__animated animate__fadeIn`}
+      } todoItem animate__animated animate__fadeIn card`}
     >
       {children}
       <div className="actionsContainer">
