@@ -55,6 +55,7 @@ header button {
   background: transparent;
   transition-duration: 200ms;
   cursor: pointer;
+  font-size: large;
 }
 
 header button:hover {

@@ -1,5 +1,5 @@
 import { useRef, useEffect } from "react";
-
+import { IoAddCircleOutline } from "react-icons/io5";
 export const TodoInput = (props) => {
   const { handleTodos, todoValue, setTodoValue } = props;
 
@@ -31,7 +31,7 @@ export const TodoInput = (props) => {
           setTodoValue("");
         }}
       >
-        Add Item
+        <IoAddCircleOutline fontSize={20} />
       </button>
     </header>
   );
