@@ -19,9 +19,11 @@ function App() {
   }
 
   const handleTodos = (newTodo) => {
-    const newTodos = [...todos, newTodo];
-    setTodos(newTodos);
-    localStorage.setItem("todolist", JSON.stringify([...todos, newTodo]));
+    if (newTodo.trim()) {
+      const newTodos = [...todos, newTodo];
+      setTodos(newTodos);
+      localStorage.setItem("todolist", JSON.stringify([...todos, newTodo]));
+    }
   };
 
   const handleDeleteTodo = (index) => {

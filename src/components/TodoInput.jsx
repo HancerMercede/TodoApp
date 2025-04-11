@@ -6,6 +6,19 @@ export const TodoInput = (props) => {
   const handleInput = () => {
     if (todoValue === "" || todoValue === "Enter todo...") return;
     handleTodos(todoValue);
+    setTodoValue("");
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      if (todoValue === "" || todoValue === "Enter todo...") return;
+
+      if (todoValue) {
+        handleTodos(todoValue);
+        setTodoValue("");
+      }
+    }
   };
 
   const InputElement = useRef(null);
@@ -21,6 +34,7 @@ export const TodoInput = (props) => {
       <input
         value={todoValue}
         onChange={(e) => setTodoValue(e.target.value)}
+        onKeyDown={handleKeyDown}
         type="text"
         placeholder="Enter todo..."
         ref={InputElement}
@@ -28,7 +42,6 @@ export const TodoInput = (props) => {
       <button
         onClick={() => {
           handleInput();
-          setTodoValue("");
         }}
       >
         <IoAddCircleOutline fontSize={20} />
