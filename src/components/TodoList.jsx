@@ -3,6 +3,7 @@ import PropTypes, { string } from "prop-types";
 
 export const TodoList = (props) => {
   const { todos } = props;
+
   return (
     <ul className="main">
       {todos.map((todo, index) => (

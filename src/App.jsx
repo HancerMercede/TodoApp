@@ -50,6 +50,7 @@ function App() {
       />
       <TodoList
         todos={todos}
+        setTodos={setTodos}
         handleDeleteTodo={handleDeleteTodo}
         handleEditTodo={handleEditTodo}
       />

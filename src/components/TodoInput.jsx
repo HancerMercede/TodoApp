@@ -1,5 +1,7 @@
 import { useRef, useEffect } from "react";
 import { IoAddCircleOutline } from "react-icons/io5";
+import PropTypes from "prop-types";
+
 export const TodoInput = (props) => {
   const { handleTodos, todoValue, setTodoValue } = props;
 
@@ -13,7 +15,6 @@ export const TodoInput = (props) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       if (todoValue === "" || todoValue === "Enter todo...") return;
-
       if (todoValue) {
         handleTodos(todoValue);
         setTodoValue("");
@@ -48,4 +49,10 @@ export const TodoInput = (props) => {
       </button>
     </header>
   );
+};
+
+TodoInput.propTypes = {
+  handleTodos: PropTypes.func,
+  todoValue: PropTypes.string,
+  setTodoValue: PropTypes.func,
 };
