@@ -1,13 +1,19 @@
 import { useRef, useEffect } from "react";
 import { IoAddCircleOutline } from "react-icons/io5";
 import PropTypes from "prop-types";
+import { generateUUID } from "../utils/generateUUID";
 
 export const TodoInput = (props) => {
   const { handleTodos, todoValue, setTodoValue } = props;
 
   const handleInput = () => {
     if (todoValue === "" || todoValue === "Enter todo...") return;
-    handleTodos(todoValue);
+    const todo = {
+      id: generateUUID(),
+      text: todoValue,
+      completed: false,
+    };
+    handleTodos(todo);
     setTodoValue("");
   };
 
@@ -16,7 +22,12 @@ export const TodoInput = (props) => {
       e.preventDefault();
       if (todoValue === "" || todoValue === "Enter todo...") return;
       if (todoValue) {
-        handleTodos(todoValue);
+        const todo = {
+          id: generateUUID(),
+          text: todoValue,
+          completed: false,
+        };
+        handleTodos(todo);
         setTodoValue("");
       }
     }

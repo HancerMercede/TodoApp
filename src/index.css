@@ -118,8 +118,9 @@ p {
 
 .completed {
   text-decoration: line-through;
-  color: red;
+  color: white;
   font-style: oblique;
+  background: linear-gradient(to right, rgb(217, 132, 28) 20%, rgb(238, 228, 228) 58%, rgb(17, 120, 100) 80%);
 }
 
 .card {
