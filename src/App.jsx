@@ -37,12 +37,11 @@ function App() {
 
   const handleEditTodo = (index) => {
     const valueToBeEdited = todos[index];
-    setTodoValue(valueToBeEdited);
+    setTodoValue(valueToBeEdited.text);
     handleDeleteTodo(index);
   };
 
   const handleCompleted = (id) => {
-    console.log(id);
     const itemCompleted = todos.find((item) => item.id === id);
 
     const newItemCompleted = todos.filter((item) => {
